@@ -11,9 +11,9 @@ export class PostResolver {
   ) {}
 
   @Mutation(returns => CreatePostPayload)
-  createPost(@Args('input') postDto: CreatePostInput
-  ): CreatePostPayload {
-    const newPost = this.postService.create(postDto);
+  async createPost(@Args('input') postDto: CreatePostInput
+  ) {
+    const newPost = await this.postService.create(postDto);
 
     return {post: newPost};
   }

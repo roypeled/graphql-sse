@@ -1,0 +1,7 @@
+query GetComments($postId:Int) {
+  comments(postId:$postId) {
+    body,
+    name,
+    dateCreated
+  }
+}

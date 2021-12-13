@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "jsx": "react",
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -18,6 +19,7 @@
       "@graphql-sse/apollo-client": ["libs/apollo-client/src/index.ts"],
       "@graphql-sse/client": ["libs/client/src/index.ts"],
       "@graphql-sse/express": ["libs/express/src/index.ts"],
+      "@graphql-sse/schemas": ["libs/schemas/src/index.ts"],
       "@graphql-sse/server": ["libs/server/src/index.ts"]
     }
   },

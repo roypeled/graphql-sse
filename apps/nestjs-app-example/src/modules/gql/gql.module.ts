@@ -10,10 +10,16 @@ import { EntityService } from './services/entity.service';
 import { UserResolver } from "./user/user.resolver";
 import { PostService } from "./post/post.service";
 import { UserService } from "./user/user.service";
+import {join} from 'path';
+
+
 @Module({
   imports: [
     GraphQLModule.forRoot({
-      autoSchemaFile: true
+      autoSchemaFile: join(__dirname, '../../../libs/schemas/generated/schema.gql'),
+      definitions: {
+        path: join(__dirname, '../../../libs/schemas/generated/schema.ts'),
+      }
     }),
   ],
   controllers: [],

@@ -46,6 +46,9 @@
       "tags": [],
       "implicitDependencies": ["react-app-example"]
     },
+    "schemas": {
+      "tags": []
+    },
     "server": {
       "tags": []
     }

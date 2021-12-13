@@ -1,4 +1,4 @@
-import { Field, InputType, Int, ObjectType } from "@nestjs/graphql";
+import { Args, Field, InputType, Int, ObjectType } from "@nestjs/graphql";
 
 @ObjectType()
 export class Comment {
@@ -8,13 +8,17 @@ export class Comment {
   @Field(() => Int)
   postId: number;
 
-  @Field(() => String)
+  @Field(() => String, {
+    nullable: true
+  })
   email: string;
 
   @Field()
   body: string;
 
-  @Field()
+  @Field({
+    nullable: true
+  })
   name: string;
 
   @Field()
@@ -26,13 +30,17 @@ export class CreateCommentInput {
   @Field(() => Int)
   postId: number;
 
-  @Field(() => String)
+  @Field(() => String, {
+    nullable: true
+  })
   email: string;
 
   @Field()
   body: string;
 
-  @Field()
+  @Field({
+    nullable: true
+  })
   name: string;
 }
 

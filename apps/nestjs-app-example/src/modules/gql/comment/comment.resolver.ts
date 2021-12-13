@@ -19,11 +19,11 @@ export class CommentResolver {
   }
 
   @Mutation(returns => CreateCommentPayload)
-  createComment(
+  async createComment(
 
     @Args('input') comment: CreateCommentInput
-  ): CreateCommentPayload {
-    const newComment = this.commentService.create(comment);
+  ): Promise<CreateCommentPayload> {
+    const newComment = await this.commentService.create(comment);
 
     this.pubSubService.pubSub.publish('commentAdded', {
       commentAdded: newComment,

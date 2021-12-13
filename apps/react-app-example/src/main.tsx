@@ -1,17 +1,14 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { ApolloProvider, useQuery, gql } from '@apollo/client';
-import { client } from './graphql-client';
+import { ApolloProvider } from '@apollo/client';
+import { apolloClient } from './app/Apollo.client';
 import App from './app/app';
 
 ReactDOM.render(
-  <StrictMode>
-    <BrowserRouter>
-      <ApolloProvider client={client}>
-        <App />
-      </ApolloProvider>
-    </BrowserRouter>
-  </StrictMode>,
+  <ApolloProvider client={apolloClient}>
+    <StrictMode>
+      <App/>
+    </StrictMode>
+  </ApolloProvider>,
   document.getElementById('root')
 );

@@ -2,6 +2,7 @@ import { split, HttpLink, ApolloClient, InMemoryCache } from '@apollo/client';
 import { getMainDefinition } from '@apollo/client/utilities';
 import { ServerSentEventsLink } from '@graphql-sse/apollo-client';
 
+
 const httpLink = new HttpLink({
   uri: 'http://localhost:4000/graphql',
 });
@@ -22,7 +23,7 @@ const splitLink = split(
   httpLink
 );
 
-export const client = new ApolloClient({
+export const apolloClient = new ApolloClient({
   link: splitLink,
   cache: new InMemoryCache(),
 });

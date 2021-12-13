@@ -8,15 +8,15 @@ export class UserResolver {
   constructor(private userService: UserService) {}
 
   @Mutation(returns => CreateUserPayload)
-  createUser(@Args('input') userDto: CreateUserInput
-  ): CreateUserPayload {
-    const newUser = this.userService.create(userDto);
+  async createUser(@Args('input') userDto: CreateUserInput
+  ) {
+    const newUser = await this.userService.create(userDto);
 
     return {user: newUser};
   }
 
   @Query(returns => [User])
-  users(): User[] {
+  users() {
     return this.userService.getEntities()
   }
 }

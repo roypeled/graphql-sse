@@ -9,7 +9,10 @@ import {Entity} from "../entity.service";
 export const population = new Map<new() => Entity, any>(
   [
     [User, users],
-    [Comment, comments],
+    [Comment, comments.map((c, i) => {
+      c['dateCreated'] = new Date(Date.now() - Math.round(i*Math.random()*1000*60*60));
+      return c;
+    })],
     [Post, posts],
   ]
 )

@@ -25,12 +25,15 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "version": "npm run affected:build",
-    "publish:libs": "lerna publish"
+    "publish:libs": "lerna publish",
+    "gen": "graphql-codegen --config codegen.yml",
+    "gen-watch": "graphql-codegen --watch --config codegen.yml"
   },
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.4.12",
     "@graphql-tools/schema": "^8.2.0",
+    "@microsoft/fetch-event-source": "^2.0.1",
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/graphql": "^9.1.1",
@@ -40,6 +43,7 @@
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "graphql": "^15.5.3",
+    "graphql-codegen": "^0.4.0",
     "graphql-subscriptions": "^1.2.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -47,10 +51,15 @@
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
     "rxjs": "~6.6.3",
+    "ts-morph": "^12.2.0",
     "tslib": "^2.0.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.3.0",
+    "@graphql-codegen/typescript": "2.4.0",
+    "@graphql-codegen/typescript-operations": "^2.2.0",
+    "@graphql-codegen/typescript-react-apollo": "3.2.1",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
     "@nrwl/cli": "12.7.2",

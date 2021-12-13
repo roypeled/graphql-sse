@@ -254,7 +254,8 @@
           "executor": "@nrwl/web:dev-server",
           "options": {
             "buildTarget": "react-app-example:build",
-            "hmr": true
+            "hmr": true,
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -303,6 +304,28 @@
           "outputs": ["{options.outputFile}"],
           "options": {
             "lintFilePatterns": ["apps/react-app-example-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "schemas": {
+      "root": "libs/schemas",
+      "sourceRoot": "libs/schemas/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/schemas/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/schemas"],
+          "options": {
+            "jestConfig": "libs/schemas/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

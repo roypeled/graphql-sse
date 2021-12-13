@@ -1,0 +1,12 @@
+overwrite: true
+schema: "libs/schemas/generated/schema.gql"
+documents: "apps/**/*.gql"
+generates:
+  libs/schemas/generated/types-and-hooks.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+
+
+
